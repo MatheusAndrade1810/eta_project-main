@@ -5,15 +5,19 @@ class TestIceCreamStand:
 
     def test_flavors_available(self):
         # Crie a instância passando os argumentos necessários
-        iceCreamStand = IceCreamStand("Sorvetes do Brasil", "Sorvetes", ["chocolate", "amendoim"])
-
+        iceCreamStand = IceCreamStand("Sorvetes do Brasil", "Sorvetes", ["chocolate,", "amendoim"])
         resultado = iceCreamStand.flavors_available()
         resultado_esperado = ('No momento temos os seguintes sabores de sorvete disponíveis: chocolate, amendoim')
 
         assert resultado == resultado_esperado
 
     def test_flavors_not_available(self):
-        pass
+
+        iceCreamStand = IceCreamStand("Sorvetes do Brasil", "Sorvetes", [])
+        resultado = iceCreamStand.flavors_available()
+        resultado_esperado = ('Estamos sem estoque atualmente!')
+
+        assert resultado == resultado_esperado
 
     def test_find_flavor(self):
         # Crie a instância passando os argumentos necessários
